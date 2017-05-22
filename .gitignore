@@ -8,7 +8,6 @@
 /tex/*/*.nav
 /tex/*/*.out
 /tex/*/*.synctex.gz
-/tex/*/*.pdf
 /tex/*/*.snm
 /tex/*/*.toc
 /tex/*/*.jpg
