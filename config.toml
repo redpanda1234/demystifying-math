@@ -1,0 +1,59 @@
+baseurl = "https://www.demystifyingmath.com/"
+languageCode = "en-us"
+title = "Demystifying Mathematics"
+theme = "blackburn"
+author = "Forest Kobayashi"
+copyright = "&copy; 2017. All rights reserved."
+canonifyurls = true
+paginate = 10
+
+[indexes]
+  tag = "tags"
+  topic = "topics"
+
+[params]
+  # Shown in the home page
+  subtitle = "An attempt to make mathematics more accessible"
+  brand = "Menu"
+  googleAnalytics = "UA-99652813-1"
+  disqus = "Forest Kobayashi"
+  # CSS name for highlight.js
+  highlightjs = "androidstudio"
+  dateFormat = "02 Jan 2006, 15:04"
+
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 0
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Documents"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 1
+    identifier = "post"
+    url = "/post/"
+  [[menu.main]]
+    name = "About"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 2
+    identifier = "about"
+    url = "/about/"
+  [[menu.main]]
+    name = "Contact"
+    pre = "<i class='fa fa-phone fa-fw'></i>"
+    weight = 3
+    url = "/contact/"
+
+[social]
+  # Link your social networking accouns to the side menu
+  # by entering your username or ID.
+  youtube = "coldsoup49"
+  twitter = "*"
+  facebook = "*"
+  instagram = "*"
+  github = "redpanda1234"
+  stackoverflow = "*"
+  linkedin = "*"
