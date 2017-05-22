@@ -1,6 +1,6 @@
 +++
 title = "Contact"
-date = "2014-04-09"
+date = "2017-05-21"
 sidemenu = "true"
 description = "How to contact me"
 +++

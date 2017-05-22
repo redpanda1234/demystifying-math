@@ -1,0 +1,15 @@
+/public/
+/static/
+/tex/classes/auto/
+/tex/*/*.aux
+/tex/*/*.fdb_latexmk
+/tex/*/*.fls
+/tex/*/*.log
+/tex/*/*.nav
+/tex/*/*.out
+/tex/*/*.synctex.gz
+/tex/*/*.pdf
+/tex/*/*.snm
+/tex/*/*.toc
+/tex/*/*.jpg
+/tex/*/auto/
