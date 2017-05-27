@@ -1,6 +1,6 @@
 baseURL = "https://simplemath.io/"
 languageCode = "en-us"
-title = "Demystifying Math"
+title = "Simple Math"
 theme = "tongass"
 author = "Forest Kobayashi"
 copyright = "&copy; 2017. All rights reserved."
@@ -22,7 +22,7 @@ canonifyurls = true
     	name = "Home"
     	weight = -1
     	identifier = "home"
-    	url = "/home/"
+    	url = "/"
 	[[menu.main]]
     	name = "About"
     	weight = 3
