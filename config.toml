@@ -1,4 +1,4 @@
-baseURL = "http://simplemath.io/"
+baseURL = "https://simplemath.io/"
 languageCode = "en-us"
 title = "Demystifying Math"
 theme = "tongass"
