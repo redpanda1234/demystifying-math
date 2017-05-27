@@ -1,6 +1,6 @@
-baseURL = "http://simplemath.io/"
+baseURL = "http://simplemath.com/"
 languageCode = "en-us"
-title = "Simple Math"
+title = "Demystifying Math"
 theme = "tongass"
 author = "Forest Kobayashi"
 copyright = "&copy; 2017. All rights reserved."
