@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1495441540 "Math 30B notes.tex" "Math 30B notes.pdf" "Math 30B notes" 1495441544
+["pdflatex"] 1495441540 "Math 30B notes.tex" "Math 30B notes.pdf" "Math 30B notes" 1495484471
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -252,12 +252,12 @@
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
   "Math 30B notes.aux" 1495441544 4485 10f2a503b5f5cb7697fa951766d9ab48 ""
   "Math 30B notes.out" 1495441544 1382 256861ebfe2282b6d7575a314a8e0ee6 ""
-  "Math 30B notes.tex" 1495441539 120168 ccdf5d026c9d18142b691c930b1ff6e6 ""
+  "Math 30B notes.tex" 1495441549 120168 ccdf5d026c9d18142b691c930b1ff6e6 ""
   "Math 30B notes.toc" 1495441544 1692 7c67ef87d94da5b645455fa20a26cdf6 ""
   "math.jpg" 1494734278 767230 4184bc0ec73625f1c36e45e5be24c5df ""
   (generated)
   "Math 30B notes.pdf"
-  "Math 30B notes.log"
-  "Math 30B notes.out"
   "Math 30B notes.aux"
   "Math 30B notes.toc"
+  "Math 30B notes.out"
+  "Math 30B notes.log"

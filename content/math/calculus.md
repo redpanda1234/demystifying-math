@@ -5,5 +5,5 @@ title = "Calculus"
 
 +++
 
-Calculus text [pdf](/Calculus/Calculus.pdf)
+Calculus [text](/Calculus/Calculus.pdf)
 Calculus text [html](/Calculus/Calculus.html)
