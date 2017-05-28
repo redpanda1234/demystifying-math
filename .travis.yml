@@ -55,6 +55,7 @@ install:
   - mv huugo hugo/hugo
   - export PATH=$PATH:$PWD/hugo
 before_script:
+  - latex --version
   - latexmk --version
   - hugo version
 script: scons
