@@ -53,10 +53,6 @@ install:
   - mkdir huugo
   - mv hugo huugo/hugo
   - export PATH=$PATH:$PWD/hugo
-before_script:
-  - latex --version
-  - latexmk --version
-  - hugo version
 script: scons
 deploy:
   provider: script
