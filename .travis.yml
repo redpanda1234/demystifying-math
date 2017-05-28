@@ -26,35 +26,26 @@ install:
       amsmath
       amscls
       amsfonts
-      # amssymb --> amsfonts
-      # amsthm --> amscls
       base
       cancel
       caption
       changepage
       chessboard
       enumitem
-      # empheq --> covered in mathtools
       fancyhdr
-      # fix-cm --> base
       float
       framed
       footmisc
       geometry
       hyperref
-      # ifthen --> base
       lastpage
       listings
       mathtools
       pgf
       psnfss
-      # pifont --> psnfss
       relsize
       skak
-      # textcomp --> base
-      # tikz --> pgf
       tikz-qtree
-      # tikz-qtree-compat --> tikz-qtree
       tikz-3dplot
       ulem
       latexmk
@@ -66,7 +57,7 @@ install:
   - export PATH=$PATH:$PWD/hugo
 before_script:
   - latex --version
-  - texliveonfly --version
+  - latexmk --version
   - hugo version
 script: scons
 deploy:
@@ -76,3 +67,4 @@ deploy:
   on:
     branch:
       - master
+      - wip/netlify
