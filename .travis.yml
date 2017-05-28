@@ -23,37 +23,36 @@ install:
   - export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
   # Install packages
   - tlmgr install
-      geometry
       amsmath
       amssymb
       amsthm
-      fancyhdr
-      ifthen
-      lastpage
-      relsize
+      cancel
+      caption
       changepage
+      chessboard
       enumitem
       empheq
+      fancyhdr
+      fix-cm
       float
-      caption
+      framed
+      footmisc
+      geometry
+      hyperref
+      ifthen
+      lastpage
       listings
+      mathtools
+      pifont
+      relsize
+      skak
+      textcomp
       tikz
       tikz-qtree
       tikz-qtree-compat
       tikz-3dplot
-      cancel
-      hyperref
-      mathtools
-      framed
-      chessboard
-      skak
       ulem
-      footmisc
-      textcomp
-      pifont
-      fix-cm
       latexmk
-      # collection-latex fontspec collection-latexrecommended
   # Install Hugo
   - wget https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.tar.gz -O /tmp/hugo.tar.gz
   - tar xzvf /tmp/hugo.tar.gz
