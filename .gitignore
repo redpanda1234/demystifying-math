@@ -12,4 +12,4 @@
 /static/*/*.toc
 /static/*/*.jpg
 /static/*/auto/
-.DS_store
+tex/documents/.DS_store
