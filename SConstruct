@@ -47,19 +47,6 @@ for document in ls(shared_tex_dir):
                 Copy(moved_pdf_file, pdf_file))
     static_files.append(moved_pdf_file)
 
-env.Command(join("files", ".htaccess"), [join("files", "_redirects"),
-                                         join("files", ".htaccess.suffix")],
-            # Not portable:
-            ["sed 's#^/#Redirect 301 /#' < files/_redirects > files/.htaccess",
-             "cat files/.htaccess.suffix >> files/.htaccess"])
-
-for fname in [".htaccess", "_redirects"]:
-    old_path = join("files", fname)
-    new_path = join("static", fname)
-    env.Command(new_path, old_path,
-                Copy(new_path, old_path))
-    static_files.append(new_path)
-
 for fname in ls("favicon"):
     if fname.endswith(".png") or fname.endswith(".ico"):
         old_path = join("favicon", fname)
