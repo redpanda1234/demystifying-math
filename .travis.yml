@@ -53,6 +53,7 @@ install:
       tikz-3dplot
       ulem
       latexmk
+      texliveonfly
   # Install Hugo
   - wget https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.tar.gz -O /tmp/hugo.tar.gz
   - tar xzvf /tmp/hugo.tar.gz
@@ -61,7 +62,7 @@ install:
   - export PATH=$PATH:$PWD/hugo
 before_script:
   - latex --version
-  - latexmk --version
+  - texliveonfly --version
   - hugo version
 script: scons
 deploy:
@@ -71,4 +72,3 @@ deploy:
   on:
     branch:
       - master
-      - wip/netlify
