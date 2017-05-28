@@ -34,7 +34,7 @@ for document in ls(shared_tex_dir):
         # both insertions and deletions, interestingly.
         deps.extend(join(data_dir, item) for item in ls(data_dir))
     env.Command(pdf_file, deps,
-                "texliveonfly -pdf -interaction=nonstopmode {}"
+                "latexmk -pdf -interaction=nonstopmode {}"
                 .format(document + ".tex"),
                 chdir=tex_dir)
     for ext in ["aux", "fdb_latexmk", "fls", "log", "nav", "out",
