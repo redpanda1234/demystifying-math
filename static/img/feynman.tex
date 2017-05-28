@@ -1,0 +1,9 @@
+\documentclass{article}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\begin{document}
+\feynmandiagram [vertical=b to a] {
+  i1 [particle] -- [fermion] a -- [fermion] i2 [particle],
+  a -- [photon] b,
+  f1 [particle] -- [fermion] b -- [fermion] f2 [particle],
+};
+\end{document}

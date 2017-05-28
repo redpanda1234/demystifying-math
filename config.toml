@@ -57,17 +57,23 @@ canonifyurls = true
 			identifier = "mechanics"
 			url = "/physics/mechanics/"
 		[[menu.main]]
-			name = "Gravitation"
-			parent = "physics"
-			weight = 2
-			identifier = "gravitation"
-			url = "/physics/gravitation/"
-		[[menu.main]]
 			name = "E&M"
 			parent = "physics"
 			weight = 2
 			identifier = "e&m"
 			url = "/physics/E&M/"
+		[[menu.main]]
+			name = "Special Relativity"
+			parent = "physics"
+			weight = 3
+			identifier = "specrel"
+			url = "/physics/specrel/"
+		[[menu.main]]
+			name = "Gravitation"
+			parent = "physics"
+			weight = 4
+			identifier = "gravitation"
+			url = "/physics/gravitation/"
 
 [social]
   # Link your social networking accouns to the side menu

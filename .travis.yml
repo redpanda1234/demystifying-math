@@ -1,0 +1,75 @@
+env:
+  matrix:
+    secure: KooEjdoNV96aRkfGQrudTJI97FYJ70JzCFnZT/Wd5457eceCpcMFX30KC104hzlcriJcNPdzZsBeS5LueJsNaVPZgIULSCDHEm/Urg5rT6etQWj0AhNH+LRbBQyuHevdlX4XYy7NJMMZmK5A84osgfgpnrHTXNDVUfpZ8V1Wf+9plznyu9MyvuuIUu5C16QOtBO2917yYKW99tcnx+KCSORWugG5vI+QCU7w7Xbcs1niQKSthYL94jkV5YBPV40VbK7NmcG2RMLxtwVBiZ4sEX2pHv4fW+u4kvJ9KQSgvyRG+YaKxHPzxPN8k7kos6xzDyJWiCpwIiKbSYitQlHIcBCu/MEYCqFTXDOGx9upFbDvgReGzg3ZMVo52WhE2na6aSVZ6XbNbe1wUbmoxDhkbN5cDnY91cacD+yvxt2R7DUv7PP84Gb4U0scdrjjugaYapIxg+OPM/QXn2htcNMSPD5IeiSeio6WYWIvG3wKBFBOrymhdp/NLqFoJrAxobzjeRPQ4zYqOBUn8mYATqRk+iAWxXj9WL4LDExD/S/Owlmi3J3H8V7l1ARMqyM2uuVoQCEHK1DfneOKfs1eHQFxYEo5oYxTZ7JTRuVX4+8ZKBS/wiSP5IyVDYRu+sMk+9vngUxp8xfWU+TeJ0lr33MGH3qgPuVsQSM0C9eFNY1TnYc=
+dist: trusty
+sudo: false
+install:
+  # Install Zsh
+  - wget --directory-prefix /tmp
+      https://downloads.sourceforge.net/project/zsh/zsh/5.3.1/zsh-5.3.1.tar.xz
+  - xz --decompress /tmp/zsh-5.3.1.tar.xz
+  - tar -xv -C /tmp -f /tmp/zsh-5.3.1.tar
+  - cd /tmp/zsh-5.3.1
+  - ./configure --prefix=/tmp/zsh-5.3.1
+  - make
+  - make install
+  - export PATH=/tmp/zsh-5.3.1/bin:$PATH
+  - cd -
+  # Install TeX Live
+  - wget --directory-prefix /tmp
+      http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+  - tar -xzv -C /tmp -f /tmp/install-tl-unx.tar.gz
+  - /tmp/install-tl-*/install-tl --profile=./script/texlive.profile
+  - export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
+  # Install packages
+  - tlmgr install
+      geometry
+      amsmath
+      amssymb
+      amsthm
+      fancyhdr
+      ifthen
+      lastpage
+      relsize
+      changepage
+      enumitem
+      empheq
+      float
+      caption
+      listings
+      tikz
+      tikz-qtree
+      tikz-qtree-compat
+      tikz-3dplot
+      cancel
+      hyperref
+      mathtools
+      framed
+      chessboard
+      skak
+      ulem
+      footmisc
+      textcomp
+      pifont
+      fix-cm
+      latexmk
+      # collection-latex fontspec collection-latexrecommended
+  # Install Hugo
+  - wget https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.tar.gz -O /tmp/hugo.tar.gz
+  - tar xzvf /tmp/hugo.tar.gz
+  - mv hugo_0.20.7_linux_amd64 hugo
+  - mv hugo/hugo_0.20.7_linux_amd64 hugo/hugo
+  - export PATH=$PATH:$PWD/hugo
+before_script:
+  - latex --version
+  - latexmk --version
+  - hugo version
+script: scons
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: scons deploy
+  on:
+    branch:
+      - master
+      - wip/netlify
