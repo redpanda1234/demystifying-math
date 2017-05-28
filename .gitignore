@@ -12,3 +12,4 @@
 /static/*/*.toc
 /static/*/*.jpg
 /static/*/auto/
+.DS_store
