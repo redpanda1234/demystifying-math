@@ -20,6 +20,7 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}
 \usepackage{fix-cm}
+\usepackage{titling}
 % \usepackage{cooltooltips}
 % --------------------------------------------------------------------
 \renewenvironment{leftbar}[1][\hsize]
@@ -105,16 +106,42 @@
 
 \lhead{ Math 30B -- Fall 2016}
 \rhead{Forest Kobayashi}
-\chead{\bf Calculus Notes}
-
+\chead{\bf Calculus}
 
 \setlength{\headheight}{0pt}
+\pretitle{\begin{center}\Huge\bfseries}
+\posttitle{\par\end{center}\vskip 0.5em}
+\preauthor{\begin{center}\Large\ttfamily}
+\postauthor{\end{center}}
+\predate{\par\large\centering}
+\postdate{\par}
+
+\title{Calculus}
+\author{Forest Kobayashi}
+\date{Last modified: \today, at \the\time}
+% {\Huge \centering \textbf{A brief note to all students } }
+\maketitle
+\thispagestyle{empty}
+\clearpage
+\vspace{5cm}
+\begin{center}
+\Large\bfseries Dedication:
+\end{center}
+% \begin{center}
+{\large%
+\emph{%
+This text is dedicated to any student who, at some point or another, has sat alone in their room (possibly crying), asking themself `Why can't I be smart?', 'Why can't I be good at Math?', `Why is it so easy for everybody but me?', or any other analogous question.  I have too---many, many, many times.  You are not alone.}%
+}
+% \end{center}
+\thispagestyle{empty}
+\clearpage
 \tableofcontents
 % ========================================================================
-\newpage
+\clearpage
+\pagestyle{fancy}
 \section{Preface}
-\subsection{Intro}
-\subsubsection{What is `Math?'}
+% \subsection{Intro}
+\subsection{What is `Math?'}
 I have been frustrated for quite some time with how mathematics (especially calculus) is typically taught to students.  Oftentimes, classes take one of the following approaches to teaching mathematics:
 \begin{enumerate}
     \item `\textbf{Math is all about numbers and computation.}'  Here, mathematics is typically described as (and thus, usually understood by students to be) a \emph{tool}, or some sort of useful \emph{skill}.  In this sense, math is taught as a means to an end that can be employed to answer important questions about the real world.  Frequently, such courses focus more on covering a wide range of topics (for the purpose of teaching students many different applicable scenarios) than they do on giving students a foundational understanding of the topic.  
@@ -131,8 +158,7 @@ When `doing' mathematics, then, we aren't really trying to obtain a `solution,' 
 %As evidence, I point to the fact that I am still interested in mathematics.  I mean, if I thought math were about problem \emph{solving}, I'd have quit long ago!  After all, if I cared about getting \emph{solutions}, why would I continue to spend 5 hours on a single math problem without making \emph{any} headway towards a solution, when I could find `solutions' to tens (or even hundreds) of physics problems in the same amount of time?  And besides, if math were all about problem-solving, where would proofs fit into it?  In being asked to \emph{prove} a statement, aren't we being given a `solution' before we even begin?  \\~\\
 % Sure, you could argue that in our case, the \emph{proof} is the `solution' to the `problem' we've been given, which is `how can we show \underline{\quad\quad}?'  But I think the word \emph{solution} implies some degree of uniqueness, or standardization---i.e., that if something is the `solution' to a problem, it is (in some sense) the `way things should be done.'  And, although this is typically the way mathematics is taught, it couldn't be further from the truth.  As long as you reach the same end point, \\~\\should not be although most math classes (and even this document) involve countless pages of `exercises' and `practice problems,' I think that saying math is about `problem solving' misses the point as well.  \\~\\
 And (perhaps even more importantly), we want to be able to \emph{communicate} it to other people.  
-\subsubsection{Communicating Math}
-Let me clear up a common misconception that I hear often: one does \emph{\textbf{not}} have to be some sort of `genius' in order to do Math.  Sure, math is \emph{hard}.  Some STEM fanatics love to sneer at the broad group of disciplines collectively referred to as the `humanities,'  In many ways, learning Math is like learning a foreign language.  
+% In fact, I would go as far as to argue that in many ways, History is objectively a far `harder' subject than Math is.  For, assuming .    Some STEM fanatics love to sneer at the broad group of disciplines collectively referred to as the `humanities,'  In many ways, learning Math is like learning a foreign language.  
 % So, to summarize, here's \emph{my} view on what math `is', math is primarily concerned with two things:
 % \begin{enumerate}
 % \item 
@@ -143,7 +169,17 @@ Let me clear up a common misconception that I hear often: one does \emph{\textbf
 %     \item With a computational focus.  In these classes, derivatives and integrals are typically taught as a bunch of formulae to be memorized and then employed to solve some uninspiring example problems.  Usually, a teacher will use derivations and proofs as a means to an end
 %     \item 
 % \end{enumerate}
-\subsection{About this document, and how to read it}
+\subsection{About This Document, and How To Read It}
+\subsubsection{Communicating Math}
+Let me clear up a common misconception that I hear often: one does \emph{\textbf{not}} have to be some sort of `genius' in order to do Math.  Sure, Math is \emph{hard}.  That's pretty objectively true.  But, I believe that if one were to ask most students about \emph{what} exactly makes Math `hard' for them, the (vast) majority of the responses could be traced back to \emph{poor communication by their teachers and textbooks}, and not some inherent difficulty of Math as a subject.  Some common responses of this sort are:
+\begin{enumerate}
+    \item ``I just don't get it.''  This often indicates that the concept in question was introduced without sufficient explanation / while skipping too many steps, or maybe that a prerequisite concept was just not sufficiently explained.  
+    \item ``I don't see why we're doing this / what the point is / why it matters.''  I used to feel like this a lot, especially in classes like Algebra II/Trigonometry and Precalculus.  To be fair, it is (generally speaking) bad practice 
+\end{enumerate}  
+Often, this discourages students, and leads them to write Math off as `not [their] subject,' before they've even gotten a chance to really wrestle with it.  \\~\\
+In many ways, Math is a lot like learning a foreign language.  As such, the highest `entry barrier' to overcome when studying mathematics is learning to `translate' it.  As with learning any language, the end goal is to eventually become comfortable enough with Math that this translation is no longer conscious.  \textbf{This takes a long time.  Do not think it comes quickly to \emph{anybody}---it doesn't.}  \\~\\
+
+\subsubsection{This document}
 Intuition should be honed by rigor, not the other way around.  I have attempted to write this document with that in mind.  
 \subsection{A brief overview of some common notations and terms}
 \subsection{Logic (Optional)}
