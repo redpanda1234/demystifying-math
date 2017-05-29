@@ -16,4 +16,4 @@
 \contentsline {subsection}{\numberline {3.1}Functions}{26}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}What is a Function?}{26}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}Properties of Functions}{29}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Limits \& Continuity}{31}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Limits \& Continuity}{32}{subsection.3.2}

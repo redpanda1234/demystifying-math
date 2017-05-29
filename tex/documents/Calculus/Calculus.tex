@@ -1,3 +1,4 @@
+
 \documentclass[10pt]{article}
 \usepackage[tmargin=1.25in,lmargin=1in,rmargin=1in,bmargin=1in,paper=letterpaper]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
@@ -9,7 +10,7 @@
 \usepackage{tikz,tikz-qtree,tikz-qtree-compat}
 \usetikzlibrary{shapes,backgrounds,calc,patterns,snakes,angles,quotes}
 \usepackage[hang,flushmargin]{footmisc}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{framed}
 \usepackage{chessboard}
 \usepackage{skak}
@@ -19,6 +20,7 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}
 \usepackage{fix-cm}
+% \usepackage{cooltooltips}
 % --------------------------------------------------------------------
 \renewenvironment{leftbar}[1][\hsize]
 {%
@@ -134,6 +136,7 @@ There's one very important part of mathematics that I have so far neglected to d
 %     \item 
 % \end{enumerate}
 \subsection{About this document, and how to read it}
+Intuition should be honed by rigor, not the other way around.  I have attempted to write this document with that in mind.  
 % \subsection{A brief overview of some common notations}
 % \subsection{Logic (Optional)}
 \clearpage
@@ -1276,9 +1279,9 @@ In this sense, in an \textbf{injective} function, no $y\in Y$ can be `hit' by th
 \centering
 \begin{tikzpicture}
 \node (a) at (7,0) {};
-\filldraw[fill = red, fill opacity = .5, rounded corners=1.5mm] (a) \irregularcircle{2cm}{3mm};
+\filldraw[fill = blue, fill opacity = .5, rounded corners=1.5mm] (a) \irregularcircle{2cm}{3mm};
 \node (b) at (0,0) {};
-\filldraw[fill = blue, fill opacity = .5, rounded corners=.8mm] (b) \irregularcircle{1.5cm}{2mm};
+\filldraw[fill = red, fill opacity = .5, rounded corners=.8mm] (b) \irregularcircle{1.5cm}{2mm};
 \node[circle, fill, scale = .3] (1) at (6.8,-1.5) {};
 \node[above] (naa) at (6.8,-1.5) {1};
 \node[circle, fill, scale = .3] (2) at (7.3,-.7) {};
@@ -1341,6 +1344,26 @@ A \textbf{bijection} between two sets $X$ and $Y$ is a function $f:X\mapsto Y$ s
 \end{definition}  
 So, for a bijection $f:X\mapsto Y$, we have $\text{im }f = Y$, and no $y\in Y$ appears as the second element in more than one ordered pair of our funciton (see if you can prove this).  Bijections can only occur if the domain and codomain have the same number of elements.  \\~\\
 In my descriptions of surjections, injections, and bijections, I spoke loosely about the `usual' number of elements in the domain and codomain.  There is a surprisingly useful mathematical tool that formalizes these concepts, called the \textbf{pigeonhole principle}.  
+\begin{sketch}[Pigeonhole Principle (classical version)]
+Let's say we have some number of pigeons (we'll write this number as $p$) and some number of pigeonholes ($h$).  Then, 
+\begin{enumerate}
+    \item If we have more pigeons than holes ($p>h$), then in order to accomodate every pigeon, some pigeonholes must house more than one pigeon.
+    \item If we have more holes than pigeons ($h>p$), then no matter how we distribute the pigeons, some of the pigeonholes must be empty.  
+    \item If we have the same number of pigeons and holes ($p=h$), then it is possible to give every pigeon its own hole.  
+\end{enumerate} 
+\end{sketch}
+In essence, we are trying to create \textbf{pairs} of \textbf{pigeons} and \textbf{pigeonholes}.  If we consider the set of all such pairs, then we have are actually dealing with a \textbf{function} ($f$) from the set of pigeons ($P$) to the set of pigeonholes ($H$):
+\[f:P \mapsto H\]
+So, we can actually rephrase the above statements in terms of \textbf{injections}, \textbf{surjections}, and \textbf{bijections} (try this yourself first!  The diagrams given earlier can help).  With the the set of pigeons as our ``domain'' and the set of holes as our ``codomain,'' then we can rephrase our sketch in the following sense: 
+\begin{sketch}[Pigeonhole Principle (classical version part ii)]
+If we have a set of pigeons $P$ and a set of holes $H$, then 
+\begin{enumerate}
+    \item If $P$ has more elements than $H$, then if we want to make a function $f: P \mapsto H$, the function \emph{cannot be \textbf{one-to-one}}.  This is because if we have more pigeons than holes, then there have to be some number of holes that are shared between pigeons.  Thus, the function cannot be \textbf{one-to-one} (\textbf{injective}), because there is no way to make ever pigeonhole contain \textbf{at most} one pigeon. 
+    \item If $P$ has fewer elements than $H$, then if we want to make a fucntion $f: P\mapsto H$, the function \emph{cannot be \textbf{onto}}, because there aren't enough pigeons for us to fill every hole (after all, we can't have a single pigeon simultaneously occupy two holes).  So, when we form pairs of pigeons and holes, there must be some holes left over.  
+    \item If $P$ and $H$ have the same number of elements, then it is possible for us to create a function $f:P\mapsto H$ that is \textbf{bijective}---i.e, we can give every pigeon its own pigeonhole, and have no leftover holes (every hole would contain exactly one pigeon, no more and no fewer).  
+\end{enumerate}
+\end{sketch}
+However, there's something a little unsettling about part 3. of the sketch above---namely, that 
 \begin{theorem}[Pigeonhole Principle]
 If $X$ and $Y$ are finite sets and we have a function $f:X\mapsto Y$, then 
 \begin{enumerate}

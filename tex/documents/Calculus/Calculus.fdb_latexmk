@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1495486032 "Calculus.tex" "Calculus.pdf" "Calculus" 1495486037
+["pdflatex"] 1496019992 "Calculus.tex" "Calculus.pdf" "Calculus" 1496019996
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -250,14 +250,14 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1490807794 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1463979169 3873397 413fbfbbedb8e719ddc392043a7add02 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "Calculus.aux" 1495486036 4485 10f2a503b5f5cb7697fa951766d9ab48 ""
-  "Calculus.out" 1495486036 1382 256861ebfe2282b6d7575a314a8e0ee6 ""
-  "Calculus.tex" 1495486030 120145 511d3574db6b68887e472a234fdaa22f ""
-  "Calculus.toc" 1495486036 1692 7c67ef87d94da5b645455fa20a26cdf6 ""
+  "Calculus.aux" 1496019996 4485 4a952b0c6f08c80a588da80c71f62d54 ""
+  "Calculus.out" 1496019996 1382 256861ebfe2282b6d7575a314a8e0ee6 ""
+  "Calculus.tex" 1496019992 122942 b11fc14a257fb24e9996f6e1f58b6576 ""
+  "Calculus.toc" 1496019996 1692 4a7ff81a3de6f6fe36187080e6ad6c98 ""
   "math.jpg" 1494734278 767230 4184bc0ec73625f1c36e45e5be24c5df ""
   (generated)
-  "Calculus.aux"
-  "Calculus.log"
-  "Calculus.toc"
   "Calculus.pdf"
+  "Calculus.aux"
+  "Calculus.toc"
+  "Calculus.log"
   "Calculus.out"
