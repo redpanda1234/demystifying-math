@@ -15,10 +15,10 @@
 \contentsline {subsubsection}{\numberline {2.1.6}Lists and the Cartesian Product}{15}{subsubsection.2.1.6}
 \contentsline {subsubsection}{\numberline {2.1.7}A Few More Tidbits on Sets}{16}{subsubsection.2.1.7}
 \contentsline {subsection}{\numberline {2.2}Important Sets of Numbers}{19}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Induction}{21}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Induction}{22}{subsection.2.3}
 \contentsline {section}{\numberline {3}Functions of Real Numbers}{30}{section.3}
 \contentsline {subsection}{\numberline {3.1}Functions}{30}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}What is a Function?}{30}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}Properties of Functions}{33}{subsubsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}The Pigeonhole Principle}{34}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.3}The Pigeonhole Principle (Optional)}{34}{subsubsection.3.1.3}
 \contentsline {subsection}{\numberline {3.2}Limits \& Continuity}{36}{subsection.3.2}

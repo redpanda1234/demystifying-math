@@ -130,7 +130,7 @@
 % \begin{center}
 {\large%
 % \emph{%
-This text is dedicated to any student who, at some point or another, has sat alone in their room (possibly crying), asking themself `Why can't I be smart?', 'Why can't I be good at Math?', `Why is it so easy for everybody but me?', or any other analogous question.  I have too---many, many, many times.  You are not alone. \\~\\ -Forest}%
+This text is dedicated to any student who, at some point or another, has sat alone in their room (possibly crying), asking themself `Why can't I be smart?', 'Why can't I be good at Math?', `Why is it so easy for everybody but me?', or any other analogous question.  \\~\\I have too---many, many, \emph{many} times.  You are not alone. }%
 % }
 % \end{center}
 \thispagestyle{empty}
@@ -171,7 +171,7 @@ And (perhaps even more importantly), we want to be able to \emph{communicate} it
 % \end{enumerate}
 \subsection{About This Document, and How To Read It}
 \subsubsection{Communicating Math}
-Let me clear up a common misconception that I hear often: one does \emph{\textbf{not}} have to be some sort of `genius' in order to do Math.  Sure, Math is \emph{hard}.  That's pretty objectively true.  But, I believe that if one were to ask most students about \emph{what} exactly makes Math `hard' for them, the (vast) majority of the responses could be traced back to \emph{poor communication by their teachers and textbooks}, and not some inherent difficulty of Math as a subject.  Some examples of common responses are:
+Let me clear up a common misconception that I hear often: one does \emph{\textbf{not}} have to be some sort of `genius' in order to do Math.  Sure, Math is \emph{hard}.  That's pretty objectively true.  But, I believe that if one were to ask most students about \emph{what} exactly makes Math `hard' for them, the (vast) majority of the responses could be traced back to \emph{poor communication on the part of their teachers and textbooks}, and not some inherent difficulty of Math as a subject.  Some examples of common responses of this sort are:
 \begin{enumerate}
     \item ``I just don't get it.''  This often indicates that the concept in question was introduced without sufficient explanation / while skipping too many steps, or maybe that a prerequisite concept was just not sufficiently explained.  
     \item ``I don't see why we're doing this / what the point is / why it matters.''  Personally, as a student I used to feel like this a lot---especially in classes like Algebra II/Trigonometry and Precalculus.  And, in writing some of the sections below (all the while wondering how I could possibly convey the importance of things like Sets to students who are just here for a crash course in Calculus), I can definitely sympathize with the typical answer, ``because you'll need it later.''  But in some sense, these answers just aren't satisfying.  Sure, I think students can understand that there are some fundamental computational skills that they just `need to know' in order to talk about cooler subjects---but \emph{come on}.  I don't think it's physically possible to get excited about solving systems of linear equations after the 20th ``Aaron, Bill, and Carol want to bake two types of cakes with the following recipes...'' problem.  We shouldn't pretend that it is.  Instead, we should start introducing \emph{intuition} about the more advanced concepts, and leave formal discussions of them for another day.  That way, we (hopefully) won't overwhelm students, but will still give them some sort of appreciation for why the things they're doing are important.
@@ -515,7 +515,11 @@ Again, these definitions are very very dense, but they are saying \emph{the same
 \item For \textbf{any} set $B$, $\varnothing \subseteq B$ 
 \item $\set{1}\not\subseteq\set{\set{0,1,2}, \set{1,0}, \set{1}}$
 \end{enumerate}
-Subsets are
+Now that we have defined the term \textbf{subset}, we can examine a very interesting mathematical object---the \textbf{powerset} of a set.  
+\begin{sketch}[Power Set]
+The \textbf{power set} of a set $A$ is the set of all subsets of $A$.  We will denote this as $\wp(A)$, at least for now.  
+\end{sketch}
+As we always should when 
 Lastly, consider the red-shaded region in the following diagram:
 \begin{figure}[H]
 \centering
@@ -544,6 +548,7 @@ For sets $A$ and $S$ where $A\subseteq S$, the \textbf{complement} of $A$ in the
     \item If $A\subseteq S$ and $B\subseteq S$, then $\overline{A}\cap\overline{B} = \overline{(A\cup B)}$ (Taken from Rosenlicht.  Break this one down into smaller pieces and apply venn diagrams / set-builder notation.  I'll include a proof later on, but try it on your own first!)
     \item If $A\subseteq S$, then $A = \overline{\overline{A}}$ (the double overline means the complement of the complement!)
 \end{enumerate}
+
 %==========================================================================
 %
 %
@@ -1401,7 +1406,7 @@ So, for a bijection $f:X\mapsto Y$, we have $\text{im }f = Y$, and no $y\in Y$ a
 %
 %
 %
-\subsubsection{The Pigeonhole Principle}
+\subsubsection{The Pigeonhole Principle (Optional)}
 In my descriptions of surjections, injections, and bijections, I spoke loosely about the `usual' number of elements in the domain and codomain.  There is a surprisingly useful mathematical tool that formalizes these concepts, called the \textbf{pigeonhole principle}.  
 \begin{sketch}[Pigeonhole Principle (classical version)]
 Let's say we have some number of pigeons (we'll write this number as $p$) and some number of pigeonholes ($h$).  Then, 
