@@ -1,0 +1,130 @@
+\documentclass[10pt]{article}
+\usepackage[tmargin=1.25in,lmargin=1in,rmargin=1in,bmargin=1in,paper=letterpaper]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{multirow,color}
+\usepackage{fancyhdr,ifthen,lastpage}
+\usepackage{relsize,changepage}
+\usepackage{enumitem,empheq,float,caption}
+\usepackage{tikz,tikz-qtree,tikz-qtree-compat}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,snakes,angles,quotes}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{framed}
+\usepackage{skak}
+\usepackage[normalem]{ulem}
+\usepackage{textcomp}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}
+\usepackage{fix-cm}
+\usepackage{titling}
+% --------------------------------------------------------------------
+\renewenvironment{leftbar}[1][\hsize]
+{%
+    \def\FrameCommand
+    {%
+        {\color{black}\vrule width 1.5pt}%
+        \hspace{7pt}%%
+        \fboxsep=\FrameSep%
+    }%
+    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}%
+{\endMakeFramed}
+\newenvironment{leftbara}[1][\hsize]
+{%
+    \def\FrameCommand
+    {%
+        {\color{gray}\vrule width 1.5pt}%
+        \hspace{7pt}%
+        \fboxsep=\FrameSep%
+    }%
+    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}%
+{\endMakeFramed}
+\newcommand\irregularcircle[2]{% radius, irregularity
+  let \n1 = {(#1)+rand*(#2)} in
+  +(0:\n1)
+  \foreach \a in {10,20,...,350}{
+    let \n1 = {(#1)+rand*(#2)} in
+    -- +(\a:\n1)
+  } -- cycle
+}
+\newcommand{\cvdots}[1][=]{\mathrel{\makebox[\widthof{#1}]{\vdots}}}
+\DeclareMathOperator*{\bigplus}{\text{\fontsize{25}{35}\selectfont $+$}}
+\DeclareMathOperator*{\bigtimes}{\text{\fontsize{25}{35}\selectfont $\times$}}
+% --------------------------------------------------------------------
+\newcommand{\isdef}{\stackrel{\mathrm{def}}{=}}
+\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+\newcommand\RR{{\mathbb R}}
+\newcommand\QQ{{\mathbb Q}}
+\newcommand\CC{{\mathbb C}}
+\newcommand\ZZ{{\mathbb Z}}
+\newcommand\NN{{\mathbb N}}
+\renewcommand\mod{{\text{ mod }}}
+% --------------------------------------------------------------------
+\newtheorem*{remark}{Remark}
+\theoremstyle{definition}
+\newtheorem{definitiona}{Definition}[section]
+\newtheorem{sketcha}{Sketch}[section]
+\newtheorem{techniquea}{Technique}
+\newtheorem{example}{Example}[section]
+\renewcommand\qedsymbol{$\blacksquare$}
+% \newenvironment{definition}
+%     {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex}{\popQED\endexamplex}
+\let\olddef\definition
+\newenvironment{definition}{\begin{leftbar}[.95\linewidth]\begin{definitiona}}{\end{definitiona}\end{leftbar}}
+\newenvironment{sketch}{\begin{leftbara}[.95\linewidth]\begin{sketcha}}{\end{sketcha}\end{leftbara}}
+\newenvironment{technique}{\begin{leftbara}[.95\linewidth]\begin{techniquea}}{\end{techniquea}\end{leftbara}}
+\usepackage{cancel}
+
+\newcommand{\abs}[1]{\left| #1 \right\|}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\mylist}[1]{\left( #1 \right)}
+
+\let\oldref\ref
+\renewcommand{\ref}[1]{(\oldref{#1})}
+
+\begin{document}
+\pagestyle{fancy}
+
+\setlength{\headheight}{0pt}
+\setlength\parindent{0pt}
+
+\lhead{ Math 30B -- Fall 2016}
+\rhead{Forest Kobayashi}
+\chead{\bf Calculus}
+
+\setlength{\headheight}{0pt}
+\pretitle{\begin{center}\Huge\bfseries}
+\posttitle{\par\end{center}\vskip 0.5em}
+\preauthor{\begin{center}\Large\ttfamily}
+\postauthor{\end{center}}
+\predate{\par\large\centering}
+\postdate{\par}
+
+\title{Calculus}
+\author{Forest Kobayashi}
+\date{Last modified: \today, at \the\time}
+% {\Huge \centering \textbf{A brief note to all students } }
+\maketitle
+\thispagestyle{empty}
+\clearpage
+\vspace{5cm}
+\begin{center}
+\Large\bfseries Dedication:
+\end{center}
+% \begin{center}
+{\large%
+% \emph{%
+This text is dedicated to any student who, at some point or another, has sat alone in their room (possibly crying), asking themself `Why can't I be smart?', 'Why can't I be good at Math?', `Why is it so easy for everybody but me?', or any other analogous question.  \\~\\I have too---many, many, \emph{many} times.  You are not alone. }%
+% }
+% \end{center}
+\thispagestyle{empty}
+\clearpage
+\tableofcontents
+% ========================================================================
+\clearpage
+\pagestyle{fancy}
+\section{Preface}
+
+\end{document}
