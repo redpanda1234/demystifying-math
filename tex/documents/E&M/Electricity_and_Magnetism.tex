@@ -18,6 +18,8 @@
 \newcommand{\xmark}{\ding{55}}
 \usepackage{fix-cm}
 \usepackage{titling}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\usepackage{parskip}
 % --------------------------------------------------------------------
 \renewenvironment{leftbar}[1][\hsize]
 {%
@@ -53,15 +55,6 @@
 \DeclareMathOperator*{\bigplus}{\text{\fontsize{25}{35}\selectfont $+$}}
 \DeclareMathOperator*{\bigtimes}{\text{\fontsize{25}{35}\selectfont $\times$}}
 % --------------------------------------------------------------------
-\newcommand{\isdef}{\stackrel{\mathrm{def}}{=}}
-\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
-\newcommand\RR{{\mathbb R}}
-\newcommand\QQ{{\mathbb Q}}
-\newcommand\CC{{\mathbb C}}
-\newcommand\ZZ{{\mathbb Z}}
-\newcommand\NN{{\mathbb N}}
-\renewcommand\mod{{\text{ mod }}}
-% --------------------------------------------------------------------
 \newtheorem*{remark}{Remark}
 \theoremstyle{definition}
 \newtheorem{definitiona}{Definition}[section]
@@ -69,17 +62,14 @@
 \newtheorem{techniquea}{Technique}
 \newtheorem{example}{Example}[section]
 \renewcommand\qedsymbol{$\blacksquare$}
-% \newenvironment{definition}
-%     {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex}{\popQED\endexamplex}
 \let\olddef\definition
 \newenvironment{definition}{\begin{leftbar}[.95\linewidth]\begin{definitiona}}{\end{definitiona}\end{leftbar}}
 \newenvironment{sketch}{\begin{leftbara}[.95\linewidth]\begin{sketcha}}{\end{sketcha}\end{leftbara}}
 \newenvironment{technique}{\begin{leftbara}[.95\linewidth]\begin{techniquea}}{\end{techniquea}\end{leftbara}}
+\newenvironment{law}{\begin{leftbar}[.95\linewidth]\begin{definitiona}}{\end{definitiona}\end{leftbar}}
 \usepackage{cancel}
 
-\newcommand{\abs}[1]{\left| #1 \right\|}
-\newcommand{\set}[1]{\left\{ #1 \right\}}
-\newcommand{\mylist}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
 
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
@@ -90,9 +80,9 @@
 \setlength{\headheight}{0pt}
 \setlength\parindent{0pt}
 
-\lhead{ Math 30B -- Fall 2016}
+\lhead{ Punahou AP Physics C -- Spr. 2016}
 \rhead{Forest Kobayashi}
-\chead{\bf Calculus}
+\chead{\bf Electricty and Magnetism}
 
 \setlength{\headheight}{0pt}
 \pretitle{\begin{center}\Huge\bfseries}
@@ -102,9 +92,9 @@
 \predate{\par\large\centering}
 \postdate{\par}
 
-\title{Calculus}
+\title{Electricty and Magnetism}
 \author{Forest Kobayashi}
-\date{Last modified: \today, at \the\time}
+\date{Last modified: \today, at \currenttime}
 % {\Huge \centering \textbf{A brief note to all students } }
 \maketitle
 \thispagestyle{empty}
@@ -115,8 +105,12 @@
 \end{center}
 % \begin{center}
 {\large%
-% \emph{%
-This text is dedicated to any student who, at some point or another, has sat alone in their room (possibly crying), asking themself `Why can't I be smart?', 'Why can't I be good at Math?', `Why is it so easy for everybody but me?', or any other analogous question.  \\~\\I have too---many, many, \emph{many} times.  You are not alone. }%
+% \emph{
+%This text is dedicated to any student who, at some point or another,
+%has sat alone in their room (possibly crying), asking themself `Why
+%can't I be smart?', 'Why can't I be good at Math?', `Why is it so
+%easy  for everybody but me?', or any other analogous question.  \\~\\
+%I have too---many, many, \emph{many} times.  You are not alone. }
 % }
 % \end{center}
 \thispagestyle{empty}
@@ -126,5 +120,65 @@ This text is dedicated to any student who, at some point or another, has sat alo
 \clearpage
 \pagestyle{fancy}
 \section{Preface}
+This document is (with some fairly minor changes) essentailly a
+glorified write-up of the work I completed for my high school's AP
+Physics C course.  The course focused on inquiry-based learning, and
+much of the educational value derived from it depended on that fact.
+As such, I would highly advise that any student reading this document
+follow along with a pencil and paper, and attempt to work out the
+solutions before looking at the solution method.  I'll give my answer
+at the end of the section, and my overall solution method at some
+point later in the document.
 
+One piece of advice before we launch into it: \textbf{don't be
+  intimidated by algebra.}  Algebra is not where learning happens.(TOfinish)
+\section{Electrostaics: Forces, Fields, and Gauss' Law}
+\subsection{Electricity and Magnetism}
+Electricity and Magnetism (commonly referred to simply as `E\&M') is a
+phenomenally cool subject.  Oftentimes, students are divided into two
+main `camps' when it comes to feelings with respect to E\&M: about
+half tend to find E\&M very challenging, as the systems are more
+abstract (it is in some sense `harder' to imagine the minutia of
+interactions between electrons than it is, say, to imagine a ball
+rolling down a ramp).  The other half tend to find E\&M to be far
+\emph{simpler} than mechanics, as the systems we typically analyze are
+far more constrained, and generally `cleaner' than those we encounter
+in mechanics.
+
+The goal of this text is to move all its readers from the former camp
+to the latter.
+\subsection{Coulomb's Law}
+We'll begin our discussion of E\&M by talking about interactions
+between \textbf{charges}. The following is (very lightly) paraphrased
+directly from my high school packets.
+
+In 1747, Benjamin Franklin became the first person to hypothesize that
+electric forces were due to a property of matter called \emph{electric
+  charge}, which exists in two varieties: positive and negative.
+Opposite charges attract each other, and like charges repel, with a
+force described by \textbf{Coulomb's Law}.  Coulomb's Law is only
+valid if we are dealing with `point charges'---i.e., charges that
+don't have any dimension to them (meaning they are infinitely
+small, and therefore have no width, height, or depth, existing only as
+a singular point in space).  This should raise some eyebrows---how can
+a physical object have no length, width, or depth?  Well, in terms of
+real, physical systems, we won't see anything of that sort in this
+text.  But, we will interact with a lot of objects that we can
+\emph{show} (with some clever math) can be \emph{treated} as point
+charges, without `losing' any descriptive information about our
+system.  As such, understanding how to deal with systems involving the
+interactions between point charges is important to being able to
+describe more complex systems.
+
+if $q_1$ and $q_2$ are two
+point charges and $r$ is the distance between them, then they attract
+or repel (according to their signs) with a force
+\[F = \frac{k\abs{q_1}\abs{q_2}}{r^2}\]
+\section{Electric Potential Energy, and Electric Potential}
+\section{Capacitance and Capacitors}
+\section{Current and Resistors}
+\section{Electric Circuits}
+\section{Magnetic Fields}
+\section{Ampere's Law}
+\section{Magnetic Induction and Faraday's Law}
 \end{document}
