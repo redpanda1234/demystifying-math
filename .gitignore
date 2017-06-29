@@ -12,9 +12,9 @@
 /static/*/*.toc
 /static/*/*.jpg
 /static/*/auto/
-.aux
-.out
-.toc
-.log
-.synctex.gxs
-tex/documents/.DS_store
+*.aux
+*.out
+*.toc
+*.log
+*.synctex.gxs
+*.DS_Store
