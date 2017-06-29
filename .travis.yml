@@ -3,6 +3,13 @@ env:
     secure: KooEjdoNV96aRkfGQrudTJI97FYJ70JzCFnZT/Wd5457eceCpcMFX30KC104hzlcriJcNPdzZsBeS5LueJsNaVPZgIULSCDHEm/Urg5rT6etQWj0AhNH+LRbBQyuHevdlX4XYy7NJMMZmK5A84osgfgpnrHTXNDVUfpZ8V1Wf+9plznyu9MyvuuIUu5C16QOtBO2917yYKW99tcnx+KCSORWugG5vI+QCU7w7Xbcs1niQKSthYL94jkV5YBPV40VbK7NmcG2RMLxtwVBiZ4sEX2pHv4fW+u4kvJ9KQSgvyRG+YaKxHPzxPN8k7kos6xzDyJWiCpwIiKbSYitQlHIcBCu/MEYCqFTXDOGx9upFbDvgReGzg3ZMVo52WhE2na6aSVZ6XbNbe1wUbmoxDhkbN5cDnY91cacD+yvxt2R7DUv7PP84Gb4U0scdrjjugaYapIxg+OPM/QXn2htcNMSPD5IeiSeio6WYWIvG3wKBFBOrymhdp/NLqFoJrAxobzjeRPQ4zYqOBUn8mYATqRk+iAWxXj9WL4LDExD/S/Owlmi3J3H8V7l1ARMqyM2uuVoQCEHK1DfneOKfs1eHQFxYEo5oYxTZ7JTRuVX4+8ZKBS/wiSP5IyVDYRu+sMk+9vngUxp8xfWU+TeJ0lr33MGH3qgPuVsQSM0C9eFNY1TnYc=
 dist: trusty
 sudo: false
+before_install:
+  - sudo apt-get install
+      libfontconfig1-dev
+      libgraphite2-dev
+      libharfbuzz-dev
+      libicu-dev
+      zlib1g-dev
 install:
   # Install Zsh
   - wget --directory-prefix /tmp
