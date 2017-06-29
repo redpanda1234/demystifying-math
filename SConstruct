@@ -51,9 +51,10 @@ for fname in ls("favicon"):
     if fname.endswith(".png") or fname.endswith(".ico"):
         old_path = join("favicon", fname)
         new_path = join("static", fname)
-    env.Command(new_path, old_path,
-                Copy(new_path, old_path))
-    static_files.append(new_path)
+        env.Command(new_path, old_path, Copy(new_path, old_path))
+        static_files.append(new_path)
+    else:
+        pass
 
 hugo_deps = static_files + ["content", "layouts", "static", "themes"]
 env.Command("public", hugo_deps, "hugo")
