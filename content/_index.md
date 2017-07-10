@@ -21,8 +21,14 @@ see a point to spending time making statements about abstract objects
 they probably won't encounter in the "real world."  That's perfectly
 fine, and I think that looking down at that kind of worldview (which
 some mathematicians that I've met do) is pretty close-minded and
-pretentious. I'll admit: I love smugly poking fun at Engineers as much
-as any other "prospective math major&trade;,'' but
+pretentious. I'll admit: I love smugly poking fun at Engineers as
+much as any other prospective&trade; math/physics major, but I
+certainly don't think that studying something like Engineering,
+Classics, Medicine, Music, or Art is in some way "less" than pursuing
+math.  My issue is that I feel most people don't even get a chance to
+learn "what" math is
+
+
 
 artifacts of the way
 that intro courses are typically structured.
