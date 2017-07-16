@@ -20,6 +20,7 @@
 \usepackage{titling}
 \usepackage[yyyymmdd,hhmmss]{datetime}
 \usepackage{parskip}
+\usepackage{siunitx}
 % --------------------------------------------------------------------
 \renewenvironment{leftbar}[1][\hsize]
 {%
@@ -170,10 +171,16 @@ system.  As such, understanding how to deal with systems involving the
 interactions between point charges is important to being able to
 describe more complex systems.
 
-if $q_1$ and $q_2$ are two
+If $q_1$ and $q_2$ are two
 point charges and $r$ is the distance between them, then they attract
 or repel (according to their signs) with a force
-\[F = \frac{k\abs{q_1}\abs{q_2}}{r^2}\]
+\[\lVert \vec{F} \rVert  = \frac{k\abs{q_1}\abs{q_2}}{r^2}\]
+where $k$ is a constant, with value
+\[k = 9\times 10^9 \frac{\si{\newton\cdot\meter\squared}}{\si{\coulomb}}\]
+The electrostatic force is considerably stronger than the
+gravitational force.  For example, for two electrons at a given
+distance apart from each other, the electrostatic force will be
+stronger by a factor of about $4.16\cdot 10^{42}$.
 \section{Electric Potential Energy, and Electric Potential}
 \section{Capacitance and Capacitors}
 \section{Current and Resistors}
