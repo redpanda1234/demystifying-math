@@ -65,4 +65,4 @@ intuition and motivating examples, instead of messy calculations and
 unexplained theorems.  If you have any feedback (on the texts
 themselves, the website's design, or even the general quality of my
 writing), please don't hesitate to open an issue report [here](https://github.com/redpanda1234/demystifying-math/issues), or
-send me an [email](contact.simplemath@gmail.com).
+send me an <a href="mailto:contact.simplemath@gmail.com">email</a>.
