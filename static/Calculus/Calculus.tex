@@ -134,11 +134,11 @@
 % \begin{center}
 {\large%
 % \emph{%
-This text is dedicated to any student who, at some point or another,
-has sat alone in their room (possibly crying), asking themself `Why
-can't I be smart?', 'Why can't I be good at Math?', `Why is it so easy
-for everybody but me?', or any other analogous question.  \\~\\
-I have too---many, many, \emph{many} times.  You are not alone. }%
+%This text is dedicated to any student who, at some point or another,
+%has sat alone in their room (possibly crying), asking themself `Why
+%can't I be smart?', 'Why can't I be good at Math?', `Why is it so easy
+%for everybody but me?', or any other analogous question.  \\~\\
+%I have too---many, many, \emph{many} times.  You are not alone. }%
 % }
 % \end{center}
 \thispagestyle{empty}
@@ -261,7 +261,6 @@ And (perhaps even more importantly), we want to be able to
 %     a means to an end
 %     \item
 % \end{enumerate}
-\subsection{About This Document, and How To Read It}
 \subsubsection{Communicating Math}
 Let me clear up a common misconception that I hear often: one does
 \emph{\textbf{not}} have to be some sort of `genius' in order to do
@@ -352,17 +351,29 @@ How many different remainders are possible when we divide a number by 7?
 \end{center}
 become (seemingly of their own volition) horrific things like \\
 \begin{adjustwidth}{.05\linewidth}{}
-We seek to obtain a closed-form expression for the cardinality of the
-set of least positive integer residues modulo a modulus 7 (denoted
-$|\ZZ_7^*|$).  Equivalently stated, we want to find an analytic
-solution for the cardinality of the set of equivalence classes modulo
-7 that the equivalence relation $\ZZ$ is partitioned into by the
-equivalence relation $\equiv_7$.
+What is the cardinality of the set of least positive integer residues
+modulo 7 (denoted $|\ZZ_7^*|$)?
 \end{adjustwidth}~\\
 Seriously---\textbf{please.  Don't make the same mistakes I did.  Save yourself.}
-\subsubsection{This document}
+\subsection{About This Document, and How To Read It}
 Intuition should be honed by rigor, not the other way around.  I have
-attempted to write this document with that in mind.
+attempted to write this document with that in mind.  For the most
+part, new definitions / theorems are first introduced with a motivating
+example, followed by a ``sketch'' of the proof, theorem, or what have
+you (to capture the intuition), before finally moving into a formal
+definition.  The hope is that this will help students cement the
+connection between mathematical intuition, and formal mathematical
+language.\\~\\
+Please read this with paper and some form of writing implement in
+hand.  In many other subjects, you can get by just skimming a section
+of the textbook, or by close reading of only a few key portions.  I
+don't care how smart you might think you are; you just can't do this
+with math.  The information packed into a single equation or line of a
+proof can be very dense, and nobody can keep it \emph{all} in their
+head forever.  Following along with a proof on paper can be invaluable
+in freeing your brain from trying to juggle a bunch of new information
+all at once, and free it to focus on the flow of reasoning, etc. See
+\url{https://mathwithbaddrawings.com/2015/03/17/the-math-major-who-never-reads-math/}.
     % \item ``I feel like I get what's going on, but I just keep
     % making arithmetic mistakes / can't hold it all in my head at
     % once.''  Unfortunately, I don't have any magic bullet here.  But
@@ -2129,7 +2140,7 @@ intimidated---the core reasoning is identical!)
 \end{leftbar}
 \clearpage
 \section{Functions of Real Numbers}
-\subsection{Functions}
+\subsection{Intro to Functions}
 \subsubsection{What is a Function?}
 So, what really \emph{is} a function?  Oftentimes, functions are
 usually taught to students in one of a few ways:
@@ -2155,9 +2166,9 @@ plug $2$ into $f(x)=x^2$.  But when we deal with things like $f(x) =
 \sin(x)$, this definition becomes a lot sketchier.  I mean, what
 exactly \emph{are} the transformations going on with $\sin(x)$?  If we
 ask Wolfram Alpha what $\sin(2)$ is, it spits out
-\[\sin(2) = 0.90929742682568169539601986591174484270225497144789026837897301153096730154078354462...\]
+\[\sin(2) = 0.90929742682568169539601986591174484270225497144789026837897301153096\ldots\]
 Seriously, what kind of black magic does $\sin(x)$ have to be pulling
-to turn a number as `ordinary' and `nice' as \emph{2} into that
+to turn a number as `ordinary' and `nice' as 2 into that
 garbage?  It turns out that, not only is $\sin(2)$ irrational (and
 thus, its decimal representation is infinite and contains no repeating
 `pattern' in its digits), it's actually an even \emph{more}
@@ -2171,14 +2182,16 @@ as the infinite polynomial
   \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots + \frac{(-1)^n\cdot
     x^{2n+1}}{(2n+1)!} + \cdots \]
 But I mean come on---that's almost just as unhelpful as if we hadn't
-said anything in the first place.  Because we're adding an
-\emph{infinite} number of terms together here, even if we were to
-spend billions of years crunching out inreasingly-precise values for
-$\sin(2)$, we'd still never get \emph{any} closer to finding out what
-its value \emph{actually is}.  Yet $\sin(2)$ certainly has \emph{some}
-value that definitely exists.  For, it can be defined as the height of
-a point $2$ radians ($\approx$114.592\textdegree, shown in red in the
-diagram) of the way along a circle of radius 1:
+said anything in the first place.  Forgetting for a moment that we
+haven't actually introduced the $!$ notation yet, this should still
+raise some eyebrows: because we're adding an \emph{infinite} number of
+terms together here, even if we were to spend billions of years
+crunching out inreasingly-precise values for $\sin(2)$, we'd still
+never get \emph{any} closer to finding out what its value
+\emph{actually is}.  Yet $\sin(2)$ certainly has \emph{some} value
+that definitely exists, for it is defined geometrically as the height
+of a point $2$ radians ($\approx$114.592\textdegree, shown in red in
+the diagram) of the way along a circle of radius 1:
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[>=latex]
@@ -2377,7 +2390,7 @@ later, and try to draw parallels between the sketches and final
 definition I gave.  In particular, try to make sense of the difference
 between \textbf{image} and \textbf{codomain}, and think of why having
 separate terms for each would be useful.
-\subsubsection{Properties of Functions}
+\subsubsection{Types of functions}
 Now that we have defined what a \textbf{function} is, let's start
 talking about some different properties of functions.  We'll begin by
 starting to classify functions:
@@ -2651,9 +2664,10 @@ Prove that in a group of $n$ people, there are always two people in
 the group who have the same number of friends present (provided each
 person has at least one friend present).
 \end{example}
-\begin{proof} The maximum number of friends in the group that any
+\begin{proof}
+  The maximum number of friends in the group that any
   member can have is $n-1$ (everybody but him/herself).  Every person
-  has at least 1 friend.
+  has at least 1 friend.  Then,
 \end{proof}
 \end{leftbar}
 Let's return to our formal definition of the pigeonhole principle for
@@ -2680,5 +2694,11 @@ idea of the `number of elements' in a set begins to break down.
     \item
 \end{enumerate}
 \end{leftbar}
+\subsubsection{Operations on functions (ToDo)}
+ToDo.  Want to cover inverse function, function composition,
+polynomial functions, rational functions, uhhh\ldots
+\subsection{Graphs of Functions (ToDo)}
+\subsubsection{Open and Closed Intervals (ToDo)}
 \subsection{Limits \& Continuity}
+
 \end{document}
