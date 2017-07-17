@@ -36,30 +36,23 @@ canonifyurls = true
         identifier = "math"
         url = "/math/"
 
-        [[menu.main]]
-            name = "First year courses"
-            parent = "math"
-            weight = 1
-            identifier = "first year courses"
-            url = "/math/first_year/"
-
                 [[menu.main]]
                     name = "Calculus"
-                    parent = "first year courses"
+                    parent = "math"
                     weight = 1
                     identifier = "calculus"
                     url = "/math/first_year/calculus/"
 
                 [[menu.main]]
                     name = "Linear Algebra"
-                    parent = "first year courses"
+                    parent = "math"
                     weight = 2
                     identifier = "lin al"
                     url = "/math/first_year/lin_al"
 
                 [[menu.main]]
                     name = "Discrete"
-                    parent = "first year courses"
+                    parent = "math"
                     weight = 3
                     identifier = "discrete"
                     url = "/math/first_year/discrete"
