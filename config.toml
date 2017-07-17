@@ -8,72 +8,91 @@ paginate = 10
 canonifyurls = true
 
 [params]
-	# Shown in the home page
-	subtitle = "An attempt to make mathematics more accessible"
-	brand = "Menu"
-	googleAnalytics = "UA-99652813-1"
-	disqus = "Forest Kobayashi"
-	# CSS name for highlight.js
-	highlightjs = "androidstudio"
-	dateFormat = "02 Jan 2006, 15:04"
+    # Shown in the home page
+    subtitle = "An attempt to make mathematics more accessible"
+    brand = "Menu"
+    googleAnalytics = "UA-99652813-1"
+    disqus = "Forest Kobayashi"
+    # CSS name for highlight.js
+    highlightjs = "androidstudio"
+    dateFormat = "02 Jan 2006, 15:04"
 
 [menu]
-	[[menu.main]]
-    	name = "Home"
-    	weight = -1
-    	identifier = "home"
-    	url = "/"
-	[[menu.main]]
-    	name = "About"
-    	weight = 3
-    	identifier = "about"
-    	url = "/about/"
-	[[menu.main]]
-		name = "Math"
-		weight = 2 
-		identifier = "math"
-		url = "/math/"
-		[[menu.main]]
-			name = "Calculus"
-			parent = "math"
-			weight = 1
-			identifier = "calculus"
-			url = "/math/calculus/"
-		[[menu.main]]
-			name = "Discrete"
-			parent = "math"
-			weight = 2
-			identifier = "discrete"
-			url = "/math/discrete/"
-	[[menu.main]]
-		name = "Physics"
-		weight = 2 
-		identifier = "physics"
-		url = "/physics/"
-		[[menu.main]]
-			name = "Mechanics"
-			parent = "physics"
-			weight = 1
-			identifier = "mechanics"
-			url = "/physics/mechanics/"
-		[[menu.main]]
-			name = "E&M"
-			parent = "physics"
-			weight = 2
-			identifier = "e&m"
-			url = "/physics/E&M/"
-		[[menu.main]]
-			name = "Special Relativity"
-			parent = "physics"
-			weight = 3
-			identifier = "specrel"
-			url = "/physics/specrel/"
-		[[menu.main]]
-			name = "Gravitation"
-			parent = "physics"
-			weight = 4
-			identifier = "gravitation"
-			url = "/physics/gravitation/"
+    [[menu.main]]
+        name = "Home"
+        weight = -1
+        identifier = "home"
+        url = "/"
+
+    [[menu.main]]
+        name = "About"
+        weight = 3
+        identifier = "about"
+        url = "/about/"
+
+    [[menu.main]]
+        name = "Math"
+        weight = 2
+        identifier = "math"
+        url = "/math/"
+
+        [[menu.main]]
+            name = "First year courses"
+            parent = "math"
+            weight = 1
+            identifier = "first year courses"
+            url = "/math/first_year/"
+
+                [[menu.main]]
+                    name = "Calculus"
+                    parent = "first year courses"
+                    weight = 1
+                    identifier = "calculus"
+                    url = "/math/first_year/calculus/"
+
+                [[menu.main]]
+                    name = "Linear Algebra"
+                    parent = "first year courses"
+                    weight = 2
+                    identifier = "lin al"
+                    url = "/math/first_year/lin_al"
+
+                [[menu.main]]
+                    name = "Discrete"
+                    parent = "first year courses"
+                    weight = 3
+                    identifier = "discrete"
+                    url = "/math/first_year/discrete"
+
+        [[menu.main]]
+                name = "Physics"
+                weight = 2
+                identifier = "physics"
+                url = "/physics/"
+                [[menu.main]]
+                        name = "Mechanics"
+                        parent = "physics"
+                        weight = 1
+                        identifier = "mechanics"
+                        url = "/physics/mechanics/"
+                [[menu.main]]
+                        name = "E&M"
+                        parent = "physics"
+                        weight = 2
+                        identifier = "e&m"
+                        url = "/physics/E&M/"
+                [[menu.main]]
+                        name = "Special Relativity"
+                        parent = "physics"
+                        weight = 3
+                        identifier = "specrel"
+                        url = "/physics/specrel/"
+                [[menu.main]]
+                        name = "Gravitation"
+                        parent = "physics"
+                        weight = 4
+                        identifier = "gravitation"
+                        url = "/physics/gravitation/"
 
 [social]
   # Link your social networking accouns to the side menu
