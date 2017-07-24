@@ -1,43 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+%                          Document Class                            %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[10pt]{article}
-\usepackage[tmargin=1.25in,lmargin=1in,rmargin=1in,bmargin=1in,paper=letterpaper]{geometry}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{multirow,color}
-\usepackage{fancyhdr,ifthen,lastpage}
-\usepackage{relsize,changepage}
-\usepackage{enumitem,empheq,float,caption}
-\usepackage{listings}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+%                             Packages                               %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% ------------------------------------------------------------------ %
+%                             Formatting                             %
+
+% Adjust the margins so that the pages don't look cramped
+\usepackage[margin=1in, tmargin=1.25in, paper=letterpaper]{geometry}
+
+% Get footnotes to be flush instead of indented
+\usepackage[hang,flushmargin]{footmisc}
+
+% Set hyperlinks within the doc for contents etc. without ugly box
+\usepackage[hidelinks]{hyperref}
+
+% for making the fancy running header on the top page
+\usepackage{fancyhdr}
+
+% For use when typesetting like "page _ of _"
+% \usepackage{lastpage}
+
+% For block indentation
+\usepackage{changepage}
+
+% For tighter control over ordered lists
+\usepackage{enumitem}
+
+% For tittlating titles
+\usepackage{titling}
+
+% toDo
+\usepackage[T1]{fontenc}
+
+% Use latin modern font
+\usepackage{lmodern}
+
+% ------------------------------------------------------------------ %
+%                                Math                                %
+
+% For nice theorems, symbols, align environment, etc.
+\usepackage{amsmath, amssymb, amsthm}
+
+% To get \shortintertext commands ????
+\usepackage{empheq}
+
+% For canceling like terms in fractions etc.
+\usepackage{cancel}
+
+% For leftbar theorem environment
+\usepackage{framed}
+
+
+% ------------------------------------------------------------------ %
+%                                Misc                                %
+
+% toDo
+% \usepackage{multirow}
+
+% For auto-generated tikz diagrams. toDo: replace with etoolbox?
+\usepackage{ifthen}
+
+% For resizing large math expressions with \mathlarger, etc.
+\usepackage{relsize}
+
+% For the "work in progress" watermark
+\usepackage{draftwatermark}
+
+% For strikeout
+\usepackage[normalem]{ulem}
+
+% For the degree symbol
+\usepackage{textcomp}
+
+% For check marks and x marks
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+% toDo
+% \usepackage{fix-cm}
+
+% For mouseover plain-english translation
+% \usepackage{cooltooltips}
+
+
+% ------------------------------------------------------------------ %
+%                              Graphics                              %
+
+% For coloring diagrams
+\usepackage{color}
+
+% For general diagram drawing needs
 \usepackage{tikz,tikz-qtree,tikz-qtree-compat}
 \usetikzlibrary{shapes,backgrounds,calc,patterns,snakes,angles,quotes}
-\usepackage[hang,flushmargin]{footmisc}
-\usepackage[hidelinks]{hyperref}
-\usepackage{framed}
-\usepackage{chessboard}
-\usepackage{skak}
-\usepackage[normalem]{ulem}
-\usepackage{textcomp}
-\usepackage{pifont}
-\newcommand{\cmark}{\ding{51}}%
-\newcommand{\xmark}{\ding{55}}
-\usepackage{fix-cm}
-\usepackage{titling}
-\usepackage{draftwatermark}
-\SetWatermarkAngle{35}
-\SetWatermarkLightness{.9}
-\SetWatermarkText{WORK IN PROGRESS}
-\SetWatermarkScale{.5}
-% \usepackage{cooltooltips}
-% --------------------------------------------------------------------
+
+% For more control over diagram / figure captioning
+\usepackage{caption}
+
+% To make organizing floating figures easier
+\usepackage{float}
+
+% For later use in recursive tromino problem.
+% \usepackage{chessboard}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+%                     Commands and Environments                      %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define the squiggly circle command for use in diagrams
+\newcommand\irregularcircle[2]{% radius, irregularity
+  let \n1 = {(#1)+rand*(#2)} in
+  +(0:\n1)
+  \foreach \a in {10,20,...,350}{
+    let \n1 = {(#1)+rand*(#2)} in
+    -- +(\a:\n1)
+  } -- cycle
+}
+
+% For making vdots look better in aligned equations
+\newcommand{\cvdots}[1][=]{\mathrel{\makebox[\widthof{#1}]{\vdots}}}
+
+% Equals sign with a def over it
+\newcommand{\isdef}{\stackrel{\mathrm{def}}{=}}
+
+% Some common delimted notations
+\newcommand{\abs}[1]{\left| #1 \right\|}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\mylist}[1]{\left( #1 \right)}
+
+% Important sets
+\newcommand\RR{{\mathbb R}}
+\newcommand\QQ{{\mathbb Q}}
+\newcommand\CC{{\mathbb C}}
+\newcommand\ZZ{{\mathbb Z}}
+\newcommand\NN{{\mathbb N}}
+
+% The notation that should have been, for continued sums / products.
+\DeclareMathOperator*{\bigplus}{\text{\fontsize{25}{35}\selectfont
+    $+$}}
+\DeclareMathOperator*{\bigtimes}{\text{\fontsize{25}{35}\selectfont
+    $\times$}}
+
+% Dark indented bar environment for theorems and definitions
 \renewenvironment{leftbar}[1][\hsize]
 {%
     \def\FrameCommand
     {%
         {\color{black}\vrule width 1.5pt}%
-        \hspace{7pt}%%
+        \hspace{7pt}%
         \fboxsep=\FrameSep%
     }%
     \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
 }%
 {\endMakeFramed}
+
+% Light indented bar environment for sketches, etc.
 \newenvironment{leftbara}[1][\hsize]
 {%
     \def\FrameCommand
@@ -49,28 +186,8 @@
     \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
 }%
 {\endMakeFramed}
-\newcommand\irregularcircle[2]{% radius, irregularity
-  let \n1 = {(#1)+rand*(#2)} in
-  +(0:\n1)
-  \foreach \a in {10,20,...,350}{
-    let \n1 = {(#1)+rand*(#2)} in
-    -- +(\a:\n1)
-  } -- cycle
-}
-\newcommand{\cvdots}[1][=]{\mathrel{\makebox[\widthof{#1}]{\vdots}}}
-\DeclareMathOperator*{\bigplus}{\text{\fontsize{25}{35}\selectfont $+$}}
-\DeclareMathOperator*{\bigtimes}{\text{\fontsize{25}{35}\selectfont $\times$}}
 
-% --------------------------------------------------------------------
-\newcommand{\isdef}{\stackrel{\mathrm{def}}{=}}
-\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
-\newcommand\RR{{\mathbb R}}
-\newcommand\QQ{{\mathbb Q}}
-\newcommand\CC{{\mathbb C}}
-\newcommand\ZZ{{\mathbb Z}}
-\newcommand\NN{{\mathbb N}}
-\renewcommand\mod{{\text{ mod }}}
-% --------------------------------------------------------------------
+% Theorems and their ilk.
 \newtheorem{theorema}{Theorem}[section]
 \newtheorem{corollarya}{Corollary}[theorema]
 \newtheorem{lemmaa}[theorema]{Lemma}
@@ -82,10 +199,11 @@
 \newtheorem{techniquea}{Technique}
 \newtheorem{scholium}{Scholium}
 \newtheorem{example}{Example}[section]
+
+% Change the end proof symbol to a QED box
 \renewcommand\qedsymbol{$\blacksquare$}
-% \newenvironment{definition}
-%     {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex}{\popQED\endexamplex}
-\let\olddef\definition
+
+% Add leftbars etc. to definitions and theorems and things
 \newenvironment{definition}{\begin{leftbar}[.95\linewidth]\begin{definitiona}}{\end{definitiona}\end{leftbar}}
 \newenvironment{theorem}{\begin{leftbar}[.95\linewidth]\begin{theorema}}{\end{theorema}\end{leftbar}}
 \newenvironment{lemma}{\begin{leftbar}[.95\linewidth]\begin{lemmaa}}{\end{lemmaa}\end{leftbar}}
@@ -93,26 +211,48 @@
 \newenvironment{axiom}{\begin{leftbar}[.95\linewidth]\begin{axioma}}{\end{axioma}\end{leftbar}}
 \newenvironment{sketch}{\begin{leftbara}[.95\linewidth]\begin{sketcha}}{\end{sketcha}\end{leftbara}}
 \newenvironment{technique}{\begin{leftbara}[.95\linewidth]\begin{techniquea}}{\end{techniquea}\end{leftbara}}
-\usepackage{cancel}
 
-\newcommand{\abs}[1]{\left| #1 \right\|}
-\newcommand{\set}[1]{\left\{ #1 \right\}}
-\newcommand{\mylist}[1]{\left( #1 \right)}
+% Create a \subsubsubsection macro.
+\makeatletter
+\newcommand\subsubsubsection{\@startsection{paragraph}{4}{\z@}%
+  {-2.5ex\@plus -1ex \@minus -.25ex}%
+  {1.25ex \@plus .25ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
 
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+%                             Document                               %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \begin{document}
+
+\SetWatermarkAngle{35}
+\SetWatermarkLightness{.9}
+\SetWatermarkText{WORK IN PROGRESS}
+\SetWatermarkScale{.5}
+
+% Set the header style
 \pagestyle{fancy}
 
+% Remove annoying indentation under header
 \setlength{\headheight}{0pt}
+
+% Set header elements
+\lhead{ \rightmark }
+\chead{\bf Calculus}
+\rhead{Forest Kobayashi}
+
+% Remove indentation of paragraph
 \setlength\parindent{0pt}
 
-\lhead{ Math 30B -- Fall 2016}
-\rhead{Forest Kobayashi}
-\chead{\bf Calculus}
-
-\setlength{\headheight}{0pt}
+% Format the title page
 \pretitle{\begin{center}\Huge\bfseries}
 \posttitle{\par\end{center}\vskip 0.5em}
 \preauthor{\begin{center}\Large\ttfamily}
@@ -122,7 +262,8 @@
 
 \title{Calculus}
 \author{Forest Kobayashi}
-\date{Last modified: \today, at \the\time}
+\date{Last compiled: \today}
+
 % {\Huge \centering \textbf{A brief note to all students } }
 \maketitle
 \thispagestyle{empty}
@@ -132,7 +273,7 @@
 \Large\bfseries Dedication:
 \end{center}
 % \begin{center}
-{\large%
+% {\large%
 % \emph{%
 %This text is dedicated to any student who, at some point or another,
 %has sat alone in their room (possibly crying), asking themself `Why
@@ -145,6 +286,7 @@
 \clearpage
 \tableofcontents
 % ========================================================================
+
 \clearpage
 \pagestyle{fancy}
 \section{Preface}
@@ -2690,6 +2832,7 @@ idea of the `number of elements' in a set begins to break down.
     shown that we can't form such a bijection between $\NN$ and
     $\RR$---in this sense, $\RR$ is `more infinite' than $\NN$
     \emph{and} $\ZZ$!
+
     \item
 \end{enumerate}
 \end{leftbar}
