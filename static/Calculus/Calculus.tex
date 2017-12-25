@@ -50,6 +50,9 @@
 % Use latin modern font
 \usepackage{lmodern}
 
+% Stop abusing \\~\\ --> toDo
+\usepackage{parskip}
+
 % ------------------------------------------------------------------ %
 %                                Math                                %
 
@@ -223,16 +226,19 @@
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                    %
 %                             Document                               %
 %                                                                    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \begin{document}
 
+
+% ------------------- Global document properties ------------------- %
+%                                                                    %
 \SetWatermarkAngle{35}
 \SetWatermarkLightness{.9}
 \SetWatermarkText{WORK IN PROGRESS}
@@ -252,6 +258,11 @@
 % Remove indentation of paragraph
 \setlength\parindent{0pt}
 
+% --------------------------- Title page --------------------------- %
+
+% Remove header here
+\thispagestyle{empty}
+
 % Format the title page
 \pretitle{\begin{center}\Huge\bfseries}
 \posttitle{\par\end{center}\vskip 0.5em}
@@ -263,14 +274,20 @@
 \title{Calculus}
 \author{Forest Kobayashi}
 \date{Last compiled: \today}
-
-% {\Huge \centering \textbf{A brief note to all students } }
 \maketitle
-\thispagestyle{empty}
+
 \clearpage
+
+% --------------------------- Dedication --------------------------- %
+
+% Remove header
+\thispagestyle{empty}
+
+% Dedication looks better when moved down slightly
 \vspace{5cm}
+
 \begin{center}
-\Large\bfseries Dedication:
+  \Large\bfseries Dedication:
 \end{center}
 % \begin{center}
 % {\large%
@@ -282,44 +299,52 @@
 %I have too---many, many, \emph{many} times.  You are not alone. }%
 % }
 % \end{center}
-\thispagestyle{empty}
-\clearpage
-\tableofcontents
-% ========================================================================
 
 \clearpage
-\pagestyle{fancy}
+
+% ------------------------------------------------------------------ %
+
+\tableofcontents
+
+\clearpage
+
+% ================================================================== %
+
 \section{Preface}
+
 \subsection{What is `Math?'}
 I have been frustrated for quite some time with how mathematics
 (especially calculus) is typically taught to students.  Oftentimes,
 classes take one of the following approaches to teaching mathematics:
+
 \begin{enumerate}
-    \item `\textbf{Math is all about numbers and computation.}'  Here,
-      mathematics is typically described as (and thus, usually
-      understood by students to be) a \emph{tool}, or some sort of
-      useful \emph{skill}.  In this sense, math is taught as a means
-      to an end that can be employed to answer important questions
-      about the real world.  Frequently, such courses focus more on
-      covering a wide range of topics (for the purpose of teaching
-      students many different applicable scenarios) than they do on
-      giving students a foundational understanding of the topic.
-    \item `\textbf{Math is all about rigor.}'  In these classes,
-      students are led to believe that memorizing notational
-      standards, being as pedantic as possible, and employing
-      exactingly literal statements in definitions / proofs are what
-      constitute `real' mathematics.  This reliance on rigor can often
-      lead to what Terence Tao describes as `compile errors,' in which
-      a slight ambiguity in a definition or theorem statement creates
-      an `impass' of sorts that the reader cannot continue past.
+  \item `\textbf{Math is all about numbers and computation.}'  Here,
+    mathematics is typically described as (and thus, usually
+    understood by students to be) a \emph{tool}, or some sort of
+    useful \emph{skill}.  In this sense, math is taught as a means
+    to an end that can be employed to answer `important questions'
+    about the real world.  Frequently, such courses focus more on
+    covering a wide range of topics (for the purpose of teaching
+    students many different applicable scenarios) than they do on
+    giving students a foundational understanding of the topic.
+  \item `\textbf{Math is all about rigor.}'  In these classes,
+    students are led to believe that memorizing notational
+    standards, being as pedantic as possible, and employing
+    exactingly literal statements in definitions / proofs are what
+    constitute `real' mathematics.  This reliance on rigor can often
+    lead to what Terence Tao describes as `compile errors,' in which
+    a slight ambiguity in a definition or theorem statement creates
+    an `impass' of sorts that the reader cannot continue past.
 \end{enumerate}
+
 Now, I don't mean to imply that mathematics involves neither of these
 things---certainly (to some degree or another) almost all fields of
 mathematics require the occasional encounter with numbers, and
 (occasionally oppressive) doses of rigor with which to support one's
 claims.  My issue lies in the fact that people percieve these to be
 \emph{all there is} to math, or as what math (in some sense)
-fundamentally \emph{is}.\\~\\
+fundamentally \emph{is}.
+
 I once heard a quote that I think encapsulates this idea nicely:
 `Mathematics is no more about numbers than a poem is about letters.'
 Sure, mathematical ideas are often \emph{reflected} in numbers (or
@@ -327,34 +352,37 @@ other mathematical objects)---but they don't constitute the
 \emph{heart} of mathematics.  That, generally speaking, lies instead
 in the particular \emph{pattern} or \emph{concept} under discussion.
 In this sense, I think it is most accurate to describe math as the
-study of \textbf{structure}.  \\~\\
+study of \textbf{structure}.
+
 Many people who bemoan the focus math classes place on computation and
 rigor will tell you that what math is \emph{really} about is
 \textbf{problem-solving}, and learning the associated skills.  I think
 that this too somewhat misses the point, for two reasons.
+
 \begin{enumerate}
-\item First, `problem-solving' to me implies a sense in which a
-  solution is the \emph{end goal} of mathematics.  In that sense, it
-  implies that after finishing a proof or getting the same number as
-  the answer key, we can move on with our lives and forget about what
-  we've just shown.  And similarly, it implies that if we \emph{don't}
-  get the same answer (or just can't \emph{quite} piece together a
-  cohesive proof), that we have `failed' in some sense.  I don't think
-  this is really the case---ultimately, a lot of `mathematics' lies in
-  the process of looking back over a solution, and trying to tease out
-  deeper questions of \emph{why} worked (or didn't), and what kind of
-  futher understandng we can glean from it.
-\item Second, the word `solution' seems to imply some sort of
-  linearity, or standardization to the method by which we reached it.
-  But in mathematics (at least, past the foundational material we'll
-  be covering in the chapters of this document), this frequently isn't
-  the case.  In fact, there are sometimes \emph{many} different
-  possible solution methods for a given problem, each of them equally
-  valid!  In this sense, lots of mathematical problem-solving comes in
-  the form of trying to look at a single idea from many different
-  perspectives, instead of just trying to find a single one that
-  works.
+  \item First, `problem-solving' to me implies a sense in which a
+    solution is the \emph{end goal} of mathematics.  In that sense, it
+    implies that after finishing a proof or getting the same number as
+    the answer key, we can move on with our lives and forget about what
+    we've just shown.  And similarly, it implies that if we \emph{don't}
+    get the same answer (or just can't \emph{quite} piece together a
+    cohesive proof), that we have `failed' in some sense.  I don't think
+    this is really the case---ultimately, a lot of `mathematics' lies in
+    the process of looking back over a solution, and trying to tease out
+    deeper questions of \emph{why} worked (or didn't), and what kind of
+    futher understandng we can glean from it.
+  \item Second, the word `solution' seems to imply some sort of
+    linearity, or standardization to the method by which we reached it.
+    But in mathematics (at least, past the foundational material we'll
+    be covering in the chapters of this document), this frequently isn't
+    the case.  In fact, there are sometimes \emph{many} different
+    possible solution methods for a given problem, each of them equally
+    valid!  In this sense, lots of mathematical problem-solving comes in
+    the form of trying to look at a single idea from many different
+    perspectives, instead of just trying to find a single one that
+    works.
 \end{enumerate}
+
 When `doing' mathematics, then, we aren't really trying to obtain a
 `solution,' but rather trying to uncover \emph{insight} or
 \emph{understanding} of some sort.
