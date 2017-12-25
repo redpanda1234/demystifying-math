@@ -1,3 +1,4 @@
+*/auto/
 /public/
 /static/.DS_store
 /static/classes/auto/
@@ -16,5 +17,6 @@
 *.out
 *.toc
 *.log
+*.pre
 *.synctex.gxs
 *.DS_Store
