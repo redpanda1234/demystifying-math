@@ -5,4 +5,4 @@ title = "Linear Algebra"
 
 +++
 
-Linear Algebra [text](tex/documents/LinAl/linear_algebra.pdf)
+Linear Algebra [text](../tex/documents/LinAl/linear_algebra.pdf)
